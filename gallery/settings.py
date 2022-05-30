@@ -59,7 +59,7 @@ ROOT_URLCONF = 'gallery.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -86,7 +86,7 @@ DATABASES = {
         # use db name
         'USER': 'wanjeri',
         # use database username
-        'PASSWORD': 'bagmulgwan',
+        'PASSWORD': 'pass123',
         # use database password set
         'HOST': 'localhost',
         'PORT': '5432'
