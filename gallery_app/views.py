@@ -8,6 +8,6 @@ def landingpage(request):
 
 def landingpage2(request):
    
-    return render(request, 'gallery/home.html')
+    return render(request, 'gallery/gallery.html')
 
 
