@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -17,7 +19,10 @@
     />
 
     <!-- custom styles -->
-    {% block custom_styles %}{% endblock %}
+    {% block styles %}
+    <link rel="stylesheet" href="{% static 'gallery_app/css/styles.css' %}" />
+
+    {% endblock %}
 
     <title>Gallery</title>
   </head>
