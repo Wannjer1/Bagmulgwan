@@ -1,6 +1,7 @@
 from django.urls import path 
-from gallery_app.views import landingpage
+from gallery_app.views import landingpage,landingpage2
 
 urlpatterns = [
-    path('gallery/', landingpage, name="landingpage"),
+    path('',landingpage, name='home'),
+    path('gallery/', landingpage2, name="home"),
 ]
