@@ -14,6 +14,7 @@ def gallery(request):
     return render(request, 'gallery/gallery.html')
 
 def location(request,locale):
+    '''Method to filter images by location'''
     images = Images.filter_by_location(locale)
     return render (request, 'location.html', {'results': images})
 

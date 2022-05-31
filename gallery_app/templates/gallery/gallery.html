@@ -1,3 +1,21 @@
 {% extends "gallery/base.html" %} {% block content %}
-<h1>this is the gallery page</h1>
+<div class="card-columns">
+  <div class="card">
+    <img class="card-img-top" src="..." alt="Card image cap" />
+  </div>
+
+  <div class="card p-3 text-right">
+    <blockquote class="blockquote mb-0">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere
+        erat a ante.
+      </p>
+      <footer class="blockquote-footer">
+        <small class="text-muted">
+          Someone famous in <cite title="Source Title">Source Title</cite>
+        </small>
+      </footer>
+    </blockquote>
+  </div>
+</div>
 {% endblock %}
