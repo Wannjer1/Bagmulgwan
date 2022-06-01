@@ -4,32 +4,70 @@
 <div class="row">
   <div class="card-columns m-3">
     {% for picture in pictures %}
-    <div class="card">
-      <img class="card-img-top" src="{{ picture.image_link.url}}" alt="Card image cap" />
+    <div class="card" data-toggle="modal" data-target="#{{picture.id}}">
+      <img
+        class="card-img-top"
+        src="{{ picture.image_link.url}}"
+        alt="Card image cap"
+      />
       <div class="card-footer">
-          <small class="text-muted">{{ picture.name}}</small>
-        </div>
+        <small class="text-muted">{{ picture.name}}</small>
+      </div>
     </div>
-    {% endfor %}
 
-</div>    
+    <!--modal section  -->
+    <div
+      class="modal fade"
+      id="{{picture.id}}"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalCenterTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">
+              {{ picture.name}}
+            </h5>
+            <hr />
 
-<!-- <div class="card-group">
-      {% for picture in pictures %}
-      <div class="card col-md-4">
-        <img
-          class="card-img-top"
-          src="{{ picture.image_link.url}}"
-          alt="Card image cap"
-        />
-
-        <div class="card-footer">
-          <small class="text-muted">{{ picture.name}}</small>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-header">
+            <small class="text-muted">Category:{{ picture.category}}</small>
+            <small class="text-muted">Location:{{ picture.location}}</small>
+          </div>
+          <div class="modal-body card">
+            <img
+              class="card-img-top"
+              src="{{ picture.image_link.url}}"
+              alt="Card image cap"
+            />
+          </div>
+          <div class="modal-footer">
+            <div>
+              <p>{{ picture.description }}</p>
+            </div>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
         </div>
       </div>
-      {% endfor %}
-    </div> -->
-</div>
-
+    </div>
+    {% endfor %}
+  </div>
   {% endblock %}
 </div>
