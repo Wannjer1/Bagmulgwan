@@ -7,7 +7,7 @@ urlpatterns = [
     path('',landingpage, name='home'),
     path('gallery/', gallery, name="gallery"),
     path('search/', search, name="search"),
-    path('location/<str:location>/', location, name='location'),
+    path('location/<str:locale>/', location, name='location'),
 ]
 
 if settings.DEBUG:

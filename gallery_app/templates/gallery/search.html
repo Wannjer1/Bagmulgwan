@@ -9,10 +9,14 @@
   </div>
 
   <div class="row">
-    <div class="gallery">
+    <div class="gallery container">
       {% if results %} {% for item in results %}
       <div class="gallery-item" tabindex="0">
-        <img src="{{item.image_link.url}}" class="gallery-image" alt="" />
+        <img
+          src="{{item.image_link.url}}"
+          class="gallery-image w-50 h-25"
+          alt=""
+        />
         <div class="gallery-item-info">
           <ul>
             <li class="gallery-item-likes">

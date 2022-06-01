@@ -11,7 +11,7 @@ def gallery(request):
     pictures = Images.get_all()
     location = Location.get_all()
    
-    return render(request, 'gallery/gallery.html')
+    return render(request, 'gallery/gallery.html',{'pictures': pictures, 'locations':location})
 
 # function to enable users to search by category
 def search(request):
@@ -29,6 +29,7 @@ def search(request):
 def location(request,locale):
     '''Method to filter images by location'''
     images = Images.filter_by_location(locale)
-    return render (request, 'location.html', {'results': images})
+    location = Location.get_all()
+    return render (request, 'gallery/gallery.html', {'pictures': images, 'locations':location})
 
 

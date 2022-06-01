@@ -9,6 +9,8 @@ class Images(models.Model):
     category = models.ForeignKey('Category', on_delete=models.CASCADE, default=1)
     location = models.ForeignKey('Location', on_delete=models.CASCADE, default=1)
 
+    def __str__(self):
+        return self.name
 
     def save_image(self):
         '''Method to save the image'''
@@ -39,7 +41,7 @@ class Images(models.Model):
         '''
         method to search images by category
         '''
-        retrieved = cls.objects.filter(category__name__contains=cat) #images assoc w/ this cat
+        retrieved = cls.objects.filter(category__name__icontains=cat)
         return retrieved #list of instances
 
     @classmethod
@@ -47,7 +49,7 @@ class Images(models.Model):
         '''
         method to retrive images by their locations
         '''
-        retrieved = Images.objects.filter(location__city__contains=location)
+        retrieved = Images.objects.filter(location__name__icontains=location)
         return retrieved
 
 

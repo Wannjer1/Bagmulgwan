@@ -1,21 +1,35 @@
 {% extends "gallery/base.html" %} {% block content %}
-<div class="card-columns">
-  <div class="card">
-    <img class="card-img-top" src="..." alt="Card image cap" />
-  </div>
 
-  <div class="card p-3 text-right">
-    <blockquote class="blockquote mb-0">
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere
-        erat a ante.
-      </p>
-      <footer class="blockquote-footer">
-        <small class="text-muted">
-          Someone famous in <cite title="Source Title">Source Title</cite>
-        </small>
-      </footer>
-    </blockquote>
-  </div>
+<!-- looping method do display images -->
+<div class="row">
+  <div class="card-columns m-3">
+    {% for picture in pictures %}
+    <div class="card">
+      <img class="card-img-top" src="{{ picture.image_link.url}}" alt="Card image cap" />
+      <div class="card-footer">
+          <small class="text-muted">{{ picture.name}}</small>
+        </div>
+    </div>
+    {% endfor %}
+
+</div>    
+
+<!-- <div class="card-group">
+      {% for picture in pictures %}
+      <div class="card col-md-4">
+        <img
+          class="card-img-top"
+          src="{{ picture.image_link.url}}"
+          alt="Card image cap"
+        />
+
+        <div class="card-footer">
+          <small class="text-muted">{{ picture.name}}</small>
+        </div>
+      </div>
+      {% endfor %}
+    </div> -->
 </div>
-{% endblock %}
+
+  {% endblock %}
+</div>
